@@ -2,22 +2,25 @@
   "name": "usercode",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "jest": {
     "transform": {
       "^.+\\.(js|jsx)$": "babel-jest"
     }
   },
+  "homepage": "https://ikran21.github.io/tic-tac-toe/",
   "scripts": {
-    "start": "parcel",
+    "start": "parcel src/index.html",
     "start-dev": "parcel src/index.html --open -p 8080",
-    "build": "parcel build"
+    "build": "parcel build src/index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.22.1",
+    "gh-pages": "^6.2.0",
     "parcel": "^2.3.2",
     "process": "^0.11.10"
   },
